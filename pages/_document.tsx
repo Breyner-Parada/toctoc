@@ -5,10 +5,7 @@ export default function Document() {
     <Html>
       <Head>
         <script
-          src="https://accounts.google.com/gsi/client"
-          async
-          defer
-        ></script>
+          src="https://accounts.google.com/gsi/client" async defer></script>
       </Head>
       <body>
         <Main />
