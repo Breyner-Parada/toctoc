@@ -1,11 +1,11 @@
 import axios from 'axios';
 import jwt_decode from 'jwt-decode';
-import { GoogleUser } from '../global';
+import { GoogleUser, TUser } from '../global';
 
 
 export const createOrGetUser = async (response: any, addUser: any) => {
-  const decoded: GoogleUser  = jwt_decode(response.credential);
-  // const decoded  = <IGoogleUser>jwt_decode(response.credential);
+  // const decoded: GoogleUser  = jwt_decode(response.credential);
+  const decoded  = <GoogleUser>jwt_decode(response.credential);
 
   const {name, picture, sub} = decoded;
 

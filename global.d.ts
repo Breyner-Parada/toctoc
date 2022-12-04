@@ -43,3 +43,10 @@ export type GoogleUser = {
   picture: string;
   sub: string;
 }
+
+export interface TUser  {
+  _id: string;
+  _type: string;
+  userName: string;
+  image: string;
+}
