@@ -1,3 +1,5 @@
+import { type } from "os";
+
 export interface IVideo {
     caption: string;
     video: {
@@ -35,3 +37,9 @@ export interface IUser {
     userName: string;
     image: string;
   }
+
+export type GoogleUser = {
+  name: string;
+  picture: string;
+  sub: string;
+}

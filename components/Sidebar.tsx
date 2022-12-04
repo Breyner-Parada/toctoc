@@ -9,28 +9,6 @@ import { Discover, Footer, SuggestedAccounts } from "./index";
 const Sidebar = () => {
   const [showSidebar, setShowSidebar] = React.useState(true);
   const userProfile = false;
-  const handleCallbackResponse = async (res: any) => {
-    try {
-      const token = res.credential;
-      console.log(token);
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  React.useEffect(() => {
-    google.accounts.id.initialize({
-      client_id: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID,
-      callback: handleCallbackResponse,
-    });
-    google.accounts.id.renderButton(document.getElementById("signIn"), {
-      theme: "filled_blue",
-      size: "large",
-      type: "standard",
-      shape: "pill",
-      width: 200,
-    });
-  }, []);
   const normalLink =
     "flex items-center gap-3 hover:bg-primary p3 justify-center xl:justify-start cursor-pointer font-semibold text-[#1eaa9f] rounded";
   return (
@@ -58,7 +36,6 @@ const Sidebar = () => {
               <p className="text-gray-400">
                 Log in to like and comment on videos
               </p>
-              <div id="signIn" className="pr-4"></div>
             </div>
           )}
           <Discover />
