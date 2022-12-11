@@ -44,7 +44,7 @@ export type GoogleUser = {
   sub: string;
 }
 
-export interface TUser  {
+export type TUser =  {
   _id: string;
   _type: string;
   userName: string;
