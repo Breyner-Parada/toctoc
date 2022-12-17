@@ -38,6 +38,17 @@ const VideoCard: NextPage<IProps> = ({post}: IProps) => {
       }
     }
   };
+  const onVideoMuted = () => {
+    if (videoRef.current) {
+      if (isVideoMuted) {
+        videoRef.current.muted = false;
+        setIsVideoMuted(false);
+      } else {
+        videoRef.current.muted = true;
+        setIsVideoMuted(true);
+      }
+    }
+  };
   return (
     <div className='flex flex-col border-b-2 border-gray-200 pb-6'>
       <div>
@@ -77,12 +88,12 @@ const VideoCard: NextPage<IProps> = ({post}: IProps) => {
                   </button>
                 )}
               {isVideoMuted ? (
-                <button onClick={() => setIsVideoMuted(false)}>
+                <button onClick={onVideoMuted}>
                   <HiVolumeOff className='text-2xl lg:text-4xl text-black' />
                 </button>
               ):
                 (
-                  <button onClick={() => setIsVideoMuted(true)}>
+                  <button onClick={onVideoMuted}>
                     <HiVolumeUp className='text-2xl lg:text-4xl text-black' />
                   </button>
                 )}

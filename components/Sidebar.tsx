@@ -5,10 +5,11 @@ import Link from "next/link";
 import { AiFillHome, AiOutlineMenu } from "react-icons/ai";
 import { ImCancelCircle } from "react-icons/im";
 import { Discover, Footer, SuggestedAccounts } from "./index";
+import useAuthStore from "../store/authStore";
 
 const Sidebar = () => {
   const [showSidebar, setShowSidebar] = React.useState(true);
-  const userProfile = false;
+  const {userProfile} = useAuthStore();
   const normalLink =
     "flex items-center gap-3 hover:bg-primary p3 justify-center xl:justify-start cursor-pointer font-semibold text-[#1eaa9f] rounded";
   return (
