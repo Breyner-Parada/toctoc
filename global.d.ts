@@ -23,10 +23,12 @@ export interface IVideo {
     }[];
     comments: {
       comment: string;
-      _key: string;
+      length?: number;
+      _key?: string;
       postedBy: {
         _ref: string;
-      };
+        _id: string;
+    };
     }[];
     userId: string;
   }
