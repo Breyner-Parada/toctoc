@@ -4,11 +4,24 @@ import { IVideo } from '../global';
 import { VideoCard, NoResults} from '../components';
 import { BASE_URL } from '../utils';
 
-export const getServerSideProps = async () => {
-  const {data} = await axios.get(`${BASE_URL}/api/post`);
+type TQuery = {
+  query: {
+    topic: string;
+  }
+};
+
+export const getServerSideProps = async ({query: {topic}}: TQuery) => {
+  let response = null;
+  if (topic) {
+    response = await axios.get(`${BASE_URL}/api/discover/${topic}`);
+    
+  } else {
+
+    response = await axios.get(`${BASE_URL}/api/post`);
+  }
   return {
     props: {
-      videos: data
+      videos: response.data,
     },
   };
 };
