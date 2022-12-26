@@ -29,6 +29,10 @@ type Props = {
 };
 
 const Home = ({ videos }: Props) => {
+
+  if (!videos) {
+    return <div>Loading...</div>;
+  }
   
   return (
     <div className='flex flex-col gap-10 videos h-full'>
