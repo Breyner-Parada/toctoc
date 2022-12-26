@@ -16,7 +16,7 @@ type TEvent = {
 
 const Navbar = () => {
   // const [user, setUser] = useState(null);
-  const {userProfile, addUser, removeUser} = useAuthStore();
+  const {userProfile, addUser, removeUser}: any = useAuthStore();
   const [searchValue, setSearchValue] = useState('');
   const router = useRouter();
   const handleSearch = (e: TEvent) => {
