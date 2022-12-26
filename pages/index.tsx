@@ -12,12 +12,10 @@ type TQuery = {
 
 export const getServerSideProps = async ({query: {topic}}: TQuery) => {
   let response = null;
-  if (topic) {
-    response = await axios.get(`${BASE_URL}/api/discover/${topic}`);
-    
-  } else {
-
+  if (!topic) {
     response = await axios.get(`${BASE_URL}/api/post`);
+  } else {
+    response = await axios.get(`${BASE_URL}/api/discover/${topic}`);
   }
   return {
     props: {
