@@ -11,7 +11,7 @@ type TQuery = {
 };
 
 export const getServerSideProps = async ({query: {topic}}: TQuery) => {
-  let response = null;
+  let response;
   if (!topic) {
     response = await axios.get(`${BASE_URL}/api/post`);
   } else {
@@ -30,8 +30,8 @@ type Props = {
 
 const Home = ({ videos }: Props) => {
 
-  if (!videos) {
-    return <div>Loading...</div>;
+  if (!videos.length) {
+    return <div className='flex justify-center items-center'>Loading...</div>;
   }
   
   return (
