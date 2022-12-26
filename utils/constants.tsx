@@ -1,6 +1,7 @@
 import { BsCode, BsEmojiSunglasses } from "react-icons/bs";
 import { GiCakeSlice, GiGalaxy, GiLipstick } from "react-icons/gi";
 import { FaPaw, FaMedal, FaGamepad } from "react-icons/fa";
+import {BiCameraMovie} from 'react-icons/bi';
 
 export const topics = [
   {
@@ -35,6 +36,10 @@ export const topics = [
     name: "sports",
     icon: <FaMedal />,
   },
+  {
+    name: "movie",
+    icon: <BiCameraMovie />,
+  }
 ];
 
 export const footerList1 = [

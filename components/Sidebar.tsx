@@ -11,14 +11,14 @@ const Sidebar = () => {
   const [showSidebar, setShowSidebar] = React.useState(true);
   const {userProfile} = useAuthStore();
   const normalLink =
-    "flex items-center gap-3 hover:bg-primary p3 justify-center xl:justify-start cursor-pointer font-semibold text-[#1eaa9f] rounded";
+    "flex items-center gap-3 hover:bg-primary px-3 py-2 mr-1 justify-center xl:justify-start cursor-pointer font-semibold text-[#1eaa9f] rounded";
   return (
     <div>
       <div
         className="block xl:hidden m-2 ml-4 mt-3"
         onClick={() => setShowSidebar((prev) => !prev)}
       >
-        {showSidebar ? <ImCancelCircle /> : <AiOutlineMenu />}
+        {showSidebar ? <ImCancelCircle size={20} /> : <AiOutlineMenu size={20}/>}
       </div>
       {showSidebar && (
         <div className="xl:w-400 w-20 flex flex-col justify-start mb-10 border-r-2 border-gray-100 xl:border-0 p-3">
