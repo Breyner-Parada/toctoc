@@ -15,7 +15,6 @@ type TEvent = {
 }
 
 const Navbar = () => {
-  // const [user, setUser] = useState(null);
   const {userProfile, addUser, removeUser}: any = useAuthStore();
   const [searchValue, setSearchValue] = useState('');
   const router = useRouter();
@@ -25,10 +24,6 @@ const Navbar = () => {
       router.push(`/search/${searchValue}`);
     }
   };
-
-  // useEffect(() => {
-  //   setUser(userProfile);
-  // }, [userProfile]);
 
   return (
     <div className='w-full flex justify-between items-center border-b-2 border-gray-200 py-2'>
